@@ -40,14 +40,8 @@ var options = [
 ];
 
 function update(){
-  
-  if(counter >= 3){
-    counter = 0;
-  } else {
-    counter++;
-  }
-
-  var url = 'url("' + options[counter] + '")'; 
+  counter++;
+  var url = 'url("' + options[counter % options.length] + '")'; 
   document.getElementById('container').style.backgroundImage = url;
 }
 
