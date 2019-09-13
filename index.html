@@ -3,6 +3,9 @@
 <head>
 <title>outfront media liveboard</title>
 <meta charset="utf-8"/>
+<link rel="prefetch" href="./images/Night_Events.png">
+<link rel="prefetch" href="./images/City_Streets.png">
+<link rel="prefetch" href="./images/Quiet_Zones.png">
 <style type="text/css">
 body{
   background:#000000;
@@ -22,8 +25,8 @@ body{
 <body>
 <div id="container"></div>
 <script type="text/javascript">
-var counter = 0;
-
+// start on random image
+var counter = parseInt((Math.random() * 999) % 3);
 // 9 seconds to milliseconds
 var time = 9 * 1000;
 
