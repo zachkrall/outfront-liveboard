@@ -48,6 +48,11 @@ function update(){
 update();
 
 setInterval(function(){update();}, time);
+
+setTimeout(refresh, 15000)
+      function refresh() {
+        location.reload(true)
+      }
 </script>
 </body>
 </html>
