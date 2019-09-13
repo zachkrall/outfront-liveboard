@@ -27,23 +27,27 @@ body{
 <script type="text/javascript">
 // start on random image
 var counter = -1;
-var time = (15 / 3) * 1000;
+var time = 3 * 1000;
 
 // 5 minutes to milliseconds
 // var time = (5 * 60) * 1000; 
 
 // Set Image URLs
 var options = [
-  // "./images/Quiet_Zones.png",
-  // "./images/City_Streets.png",
-  "./images/Night_Events.png",
-  "./images/Night_Events.png",
+  "./images/Quiet_Zones.png",
+  "./images/City_Streets.png",
   "./images/Night_Events.png"
 ];
 
 function update(){
-  counter++;
-  var url = 'url("' + options[counter % options.length] + '")'; 
+  
+  if(counter >= 3){
+    counter = 0;
+  } else {
+    counter++;
+  }
+
+  var url = 'url("' + options[counter] + '")'; 
   document.getElementById('container').style.backgroundImage = url;
 }
 
