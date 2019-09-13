@@ -26,7 +26,7 @@ body{
 <div id="container"></div>
 <script type="text/javascript">
 // start on random image
-var counter = 0;
+var counter = -1;
 var time = (15 / 3) * 1000;
 
 // 5 minutes to milliseconds
@@ -34,19 +34,20 @@ var time = (15 / 3) * 1000;
 
 // Set Image URLs
 var options = [
-  "./images/Night_Events.png",
   "./images/Quiet_Zones.png",
-  "./images/City_Streets.png"
+  "./images/City_Streets.png",
+  "./images/Night_Events.png"
 ];
 
 function update(){
+  counter++;
   var url = 'url("' + options[counter % options.length] + '")'; 
   document.getElementById('container').style.backgroundImage = url;
 }
 
 update();
 
-setInterval(function(){counter++;update();}, time);
+setInterval(function(){update();}, time);
 </script>
 </body>
 </html>
