@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>outfront media liveboard</title>
-  <meta charset="utf-8"/>
+<title>outfront media liveboard</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+body{
+  background:#000000;
+}
+#container{
+  position:fixed;
+  top:0px;left:0px;
+  width:100vw;height:calc( 100vw * 16 / 9);
+  max-height:100vh;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  transition:0.5s ease all;
+}
+</style>
 </head>
 <body>
-   <h1>Zach Krall</h1>
+<div id="container"></div>
+<script type="text/javascript">
+var counter = 0;
+
+// 9 seconds to milliseconds
+var time = 9 * 1000;
+
+// 5 minutes to milliseconds
+// var time = (5 * 60) * 1000; 
+
+// Set Image URLs
+var options = [
+  "./images/Night_Events.png",
+  "./images/Quiet_Zones.png",
+  "./images/City_Streets.png"
+];
+
+function update(){
+  var url = 'url("' + options[counter % options.length] + '")'; 
+  document.getElementById('container').style.backgroundImage = url;
+}
+
+update();
+
+setInterval(function(){counter++;update();}, time);
+</script>
 </body>
 </html>
