@@ -1,5 +1,5 @@
-*.hot-update.json
-*.hot-update.js
+.hot-update.json
+.hot-update.js
 .DS_Store
 
 # Logs
