@@ -1,88 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
-
-    <title>Flow</title>
-
+<title>outfront media liveboard</title>
+<meta charset="utf-8"/>
 <style type="text/css">
 body{
-  background:#000;
-  background-image:url('background.png');
+  background:#000000;
+}
+#container{
+  position:fixed;
+  top:0px;left:0px;
+  width:100vw;height:calc( 100vw * 16 / 9);
+  max-height:100vh;
   background-repeat:no-repeat;
+  background-position:center;
   background-size:contain;
-
-  max-width: 100vh * 16 / 9;
+  transition:0.5s ease all;
 }
 </style>
 </head>
 <body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js" integrity="sha256-WVsM3xrcqyuFNF3W1qtIKbHFsD0977nDQA8DCMp1zCw=" crossorigin="anonymous"></script>
+<div id="container"></div>
 <script type="text/javascript">
-const m = 100, step = 30;
-let time = 0, amp = 30;
+// start on random image
+var time = 3000;
 
-function setup() {
-  createCanvas(window.innerWidth, window.innerHeight);
+// 5 minutes to milliseconds
+// var time = (5 * 60) * 1000;
+
+// Set Image URLs
+var options = [
+  "137th st.png",
+  "Lorimer St.png",
+  "14th-st.png",
+  "Metropolitan-Ave.png",
+  "25th-st.png",
+  "Morrison-Av.png",
+  "67th ave.png",
+  "Nassau-Ave.png",
+  "68th-St-Hunter-College.png",
+  "Parsons-Blvd.png",
+  "96th-st.png",
+  "Rockaway-Park.png",
+  "Bay-Pky.png",
+  "Sheepshead Bay.png",
+  "Broadway-Junction.png",
+  "W4.png",
+  "Canal-St.png",
+  "union-sq.png",
+  "Euclid-Ave.png"
+];
+
+function update(){
+  // counter++;
+  // var url = 'url("' + options[counter % options.length] + '")';
+  var url = 'url("./midterm_slideshow/' + options[parseInt(Math.random() * options.length)] + '")';
+  document.getElementById('container').style.backgroundImage = url;
+
+  console.log(url);
 }
 
-function draw() {
+update();
 
-  clear();
-
-  let minW = 0-m;
-  let maxW = width+m;
-
-  let minH = 0-m;
-  let maxH = height+m;
-
-  // background(20,20,20);
-  // background(255);
-
-  for (let i=minW; i<maxW; i+=step){
-    for (let j=minH; j<maxH; j+=step){
-
-      let x = i, y = j;
-
-      stroke(
-        map(x, minW, maxW, 0, 255),
-        map(y, minH, maxH, 0, 255),
-        255
-      );
-      stroke(244);
-      strokeWeight(1);
-
-      noFill();
-
-      let nX = x/width;
-      let nY = y/height;
-      let size = 12;
-
-      let rotation = (
-                   sin( (nX * -5) + time ) +
-                   sin( (nY * 5) + time ) +
-                   cos( (nX * -10) + HALF_PI ) +
-                   sin( (nY * 5) + PI ) +
-                   sin( (nX * 8) + PI )
-                 ) * amp;
-
-      size = abs(size);
-
-      push();
-      translate(x,y)
-      rotate(rotation * 0.05);
-      line( 0, 0, size, size);
-      pop();
-
-    }
-  }
-
-  time+=0.1;
-
-}
+setInterval(function(){
+  update();
+}, time);
 </script>
 </body>
 </html>

@@ -1,3 +1,7 @@
+*.hot-update.json
+*.hot-update.js
+.DS_Store
+
 # Logs
 logs
 *.log
