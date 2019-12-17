@@ -1,6 +1,0 @@
-minX: -73.75540499924732,
-maxX: -74.03087600085765,
-minY: 40.576033818103646,
-maxY: 40.903125000541245
-
-data: https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49/data

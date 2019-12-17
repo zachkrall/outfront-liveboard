@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>outfront media liveboard</title>
+<meta charset="utf-8"/>
+<style type="text/css">
+body{
+  background:#000000;
+}
+#container{
+  position:fixed;
+  top:0px;left:0px;
+  width:100vw;height:calc( 100vw * 16 / 9);
+  max-height:100vh;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  transition:0.5s ease all;
+}
+</style>
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript">
+// start on random image
+var time = 3000;
+
+// 5 minutes to milliseconds
+// var time = (5 * 60) * 1000;
+
+// Set Image URLs
+var options = [
+  "137th st.png",
+  "Lorimer St.png",
+  "14th-st.png",
+  "Metropolitan-Ave.png",
+  "25th-st.png",
+  "Morrison-Av.png",
+  "67th ave.png",
+  "Nassau-Ave.png",
+  "68th-St-Hunter-College.png",
+  "Parsons-Blvd.png",
+  "96th-st.png",
+  "Rockaway-Park.png",
+  "Bay-Pky.png",
+  "Sheepshead Bay.png",
+  "Broadway-Junction.png",
+  "W4.png",
+  "Canal-St.png",
+  "union-sq.png",
+  "Euclid-Ave.png"
+];
+
+function update(){
+  // counter++;
+  // var url = 'url("' + options[counter % options.length] + '")';
+  var url = 'url("./images/' + options[parseInt(Math.random() * options.length)] + '")';
+  document.getElementById('container').style.backgroundImage = url;
+
+  console.log(url);
+}
+
+update();
+
+setInterval(function(){
+  update();
+}, time);
+</script>
+</body>
+</html>

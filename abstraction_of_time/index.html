@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Outfront Media - Clocks</title>
+    <style type="text/css">
+      body{
+        font-family:sans-serif;
+        background:#000;
+        min-width: 100vw; min-height: 100vh;
+        overflow: hidden;
+      }
+      canvas{
+        position:absolute;
+        top:0;left:0;
+        z-index:99;
+      }
+      #color{
+        position:absolute;
+        top:0;left:0;
+        width:100%;height:100%;
+        z-index:10;
+        opacity:0.9;
+        mix-blend-mode: screen;
+        -webkit-mix-blend-mode: screen;
+      }
+      video{
+        position:absolute;
+        top:0;left:0;
+        z-index:1;
+        width:100%;height:100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="color"></div>
+    <video autoplay loop muted playsinline>
+      <source src="./Final.ogv" type="video/ogg">
+      <source src="./Final.mp4" type="video/mp4">
+    </video>
+    <canvas id="time_canvas"></canvas>
+    <!-- JS is Injected Here -->
+  </body>
+</html>
