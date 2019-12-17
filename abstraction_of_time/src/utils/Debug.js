@@ -4,7 +4,9 @@ import {
   Mesh,
   DoubleSide
 } from 'three';
-import Stats from '../jsm/libs/stats.module.js';
+
+import Stats from 'three/examples/jsm/libs/stats.module.js';
+
 /*
 
   This is the debug view, which
@@ -12,6 +14,7 @@ import Stats from '../jsm/libs/stats.module.js';
   information about visualization
 
 */
+
 export default class Debug {
 
   constructor ( _context, _visible ){

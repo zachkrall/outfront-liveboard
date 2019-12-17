@@ -1,7 +1,7 @@
 import {
   Scene
 } from 'three';
-// import { OrbitControls } from './jsm/controls/OrbitControls.js';
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 import { timeFormat } from './utils/functions.js';
 // import { resizeCanvas } from './utils/events.js';
